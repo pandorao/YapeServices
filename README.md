@@ -3,3 +3,7 @@ Requirements to run the project
 2. Run the YapeServices.TransactionService project. This project applies EFcore migrations and will automatically create a database in SQL Server localdb
 
 Architecture
+
+
+Created by: Juan David Lagares Arrazola 
+25/02/2025
