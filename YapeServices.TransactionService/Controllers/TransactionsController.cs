@@ -28,7 +28,7 @@ namespace Yape.Adapter.Api.Controllers
             return Ok(await _transactionsService.GetAllAsync());
         }
 
-        [HttpGet]
+        [HttpGet("{id}")]
         [SwaggerResponse(StatusCodes.Status200OK, Type = typeof(ServiceResult<List<Transaction>>))]
         public async Task<ActionResult> Get(string id)
         {
