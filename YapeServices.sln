@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YapeServices.TransactionService", "YapeServices.TransactionService\YapeServices.TransactionService.csproj", "{84485AF6-91CB-482A-83BA-B093E8F24137}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YapeServices.Services", "YapeServices.Services\YapeServices.Services.csproj", "{32D70DB6-F1D1-4DE3-ADD4-B003620FB691}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YapeServices.Database", "YapeServices.Database\YapeServices.Database.csproj", "{9EFD9F22-165C-4BC3-81F3-50DDA76AE412}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YapeServices.Kafka", "YapeServices.Kafka\YapeServices.Kafka.csproj", "{56BB0EAA-A752-4EA7-850A-B853043E1D8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{9EFD9F22-165C-4BC3-81F3-50DDA76AE412}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EFD9F22-165C-4BC3-81F3-50DDA76AE412}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EFD9F22-165C-4BC3-81F3-50DDA76AE412}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56BB0EAA-A752-4EA7-850A-B853043E1D8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56BB0EAA-A752-4EA7-850A-B853043E1D8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56BB0EAA-A752-4EA7-850A-B853043E1D8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56BB0EAA-A752-4EA7-850A-B853043E1D8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,5 +66,6 @@ Global
 		{B50782CB-0614-4242-A12D-882FB390B94C} = {5DA11C95-C2EB-47BE-A59E-52091D7FCD9F}
 		{32D70DB6-F1D1-4DE3-ADD4-B003620FB691} = {03082EB3-BC3A-4581-B470-E058231607CE}
 		{9EFD9F22-165C-4BC3-81F3-50DDA76AE412} = {AF1A917C-3E2A-4AF1-A61D-B46302A786F7}
+		{56BB0EAA-A752-4EA7-850A-B853043E1D8F} = {AF1A917C-3E2A-4AF1-A61D-B46302A786F7}
 	EndGlobalSection
 EndGlobal

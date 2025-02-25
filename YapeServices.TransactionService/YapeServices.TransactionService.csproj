@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\YapeServices.Database\YapeServices.Database.csproj" />
+    <ProjectReference Include="..\YapeServices.Kafka\YapeServices.Kafka.csproj" />
     <ProjectReference Include="..\YapeServices.Services\YapeServices.Services.csproj" />
   </ItemGroup>
 
