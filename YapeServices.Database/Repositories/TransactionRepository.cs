@@ -25,6 +25,18 @@ namespace YapeServices.Database.Repositories
             await _context.SaveChangesAsync();
         }
 
+        public async Task<decimal> GetAcumulatedPerDayAsync(DateTime date)
+        {
+            date = date.Date;
+            return await _context
+                .Transactions
+                .Where(x => 
+                    x.TransactionStatus == Entities.Enumerations.EnumTransactionStatus.Approved &&
+                    date <= x.CreatedAt && x.CreatedAt <= date.Date.AddDays(1).AddTicks(-1)
+                )
+                .SumAsync(x => x.Value);
+        }
+
         public async Task<List<Transaction>> GetAllAsync()
         {
             return await _context.Transactions.ToListAsync();

@@ -13,5 +13,6 @@ namespace YapeServices.Ports.Repositories
         Task<Transaction> GetByIdAsync(string id);
         Task AddAsync(Transaction transaction);
         Task UpdateAsync(Transaction transaction);
+        Task<decimal> GetAcumulatedPerDayAsync(DateTime date);
     }
 }

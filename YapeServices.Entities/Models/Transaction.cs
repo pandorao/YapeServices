@@ -21,5 +21,6 @@ namespace YapeServices.Entities.Models
         [Required]
         public DateTime CreatedAt { get; set; }
         public DateTime? ExecutedAt { get; set; }
+        public string AntifraudReason {  get; set; }
     }
 }
