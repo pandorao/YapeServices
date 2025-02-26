@@ -39,7 +39,7 @@ namespace YapeServices.Database.Repositories
 
         public async Task<List<Transaction>> GetAllAsync()
         {
-            return await _context.Transactions.ToListAsync();
+            return await _context.Transactions.OrderByDescending(x => x.CreatedAt).ToListAsync();
         }
 
         public async Task<Transaction> GetByIdAsync(string id)

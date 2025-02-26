@@ -49,9 +49,10 @@ namespace YapeServices.Services
             transaction.TransactionStatus = serviceResult.Succeeded ?
                 EnumTransactionStatus.Approved :
                 EnumTransactionStatus.Rejected;
+            transaction.ExecutedAt = DateTime.Now;
             transaction.AntifraudReason = serviceResult.Succeeded ?
                 "Appoved" :
-                $"Rejected: {serviceResult.Errors.First()}";
+                $"Rejected: {string.Join(", ", serviceResult.Errors.SelectMany(x => x.Value))}";
 
             await _transactionRepository.UpdateAsync(transaction);
             return serviceResult;
