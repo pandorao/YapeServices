@@ -39,24 +39,27 @@ namespace YapeServices.Kafka
         {
             _consumer.Subscribe(_topic);
 
-            while (!stoppingToken.IsCancellationRequested)
+            _ = Task.Run(async () =>
             {
-                try
+                while (!stoppingToken.IsCancellationRequested)
                 {
-                    var consumeResult = _consumer.Consume(stoppingToken);
-                    var id = consumeResult.Message.Value;
-
-                    using (var scope = _serviceScopeFactory.CreateScope())
+                    try
                     {
-                        var antifraudService = scope.ServiceProvider.GetRequiredService<IAntifraudService>();
-                        await antifraudService.ExecuteTransaction(id);
+                        var consumeResult = _consumer.Consume(stoppingToken);
+                        var id = consumeResult.Message.Value;
+
+                        using (var scope = _serviceScopeFactory.CreateScope())
+                        {
+                            var antifraudService = scope.ServiceProvider.GetRequiredService<IAntifraudService>();
+                            await antifraudService.ExecuteTransaction(id);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"{ex.Message}");
                     }
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"{ex.Message}");
-                }
-            }
+            });
         }
 
         public override void Dispose()
