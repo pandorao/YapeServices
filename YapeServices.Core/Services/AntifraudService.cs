@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Yape.Entities.Base;
+using YapeServices.Core.Exceptions;
 using YapeServices.Entities.Enumerations;
 using YapeServices.Ports.Repositories;
 using YapeServices.Ports.Services;
@@ -21,30 +22,41 @@ namespace YapeServices.Services
         public async Task<ServiceResult> ExecuteTransaction(string id)
         {
             var serviceResult = new ServiceResult();
-
             var transaction = await _transactionRepository
                 .GetByIdAsync(id);
-            if (transaction == null)
+
+            try
             {
-                serviceResult.AddModelError("", "Transaction not found");
-                return serviceResult;
+                if (transaction == null)
+                {
+                    throw new TransactionNotFoundException(id);
+                }
+
+                if (transaction.TransactionStatus != Entities.Enumerations.EnumTransactionStatus.Pending)
+                {
+                    throw new TransactionAlreadyExecutedException();
+                }
+
+                if (transaction.Value > 2000)
+                {
+                    throw new FraudDetectionException("Transaction value is greater than 2,000.");
+                }
+
+                if (await _transactionRepository.GetAcumulatedPerDayAsync(transaction.CreatedAt.Date) > 20000)
+                {
+                    throw new FraudDetectionException("Accumulated transaction value per day exceeds 20,000.");
+                }
+            }
+            catch (ApplicationException ex)
+            {
+                serviceResult.AddModelError("Fraud", ex.Message);
+
+                if (transaction == null)
+                {
+                    return serviceResult;
+                }
             }
 
-            if (transaction.TransactionStatus != Entities.Enumerations.EnumTransactionStatus.Pending)
-            {
-                serviceResult.AddModelError("", "Transaction was executed");
-                return serviceResult;
-            }
-
-            if (transaction.Value > 2000)
-            {
-                serviceResult.AddModelError("", "Transaction value greater than 2.000");
-            }
-
-            if (await _transactionRepository.GetAcumulatedPerDayAsync(transaction.CreatedAt.Date) > 20000)
-            {
-                serviceResult.AddModelError("", "Acumulated per day is greater than 20.000");
-            }
 
             transaction.TransactionStatus = serviceResult.Succeeded ?
                 EnumTransactionStatus.Approved :
