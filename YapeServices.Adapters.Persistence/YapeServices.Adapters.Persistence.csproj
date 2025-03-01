@@ -21,8 +21,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\YapeServices.Entities\YapeServices.Entities.csproj" />
-	  <ProjectReference Include="..\YapeServices.Ports\YapeServices.Ports.csproj" />
+	  <ProjectReference Include="..\YapeServices.Core\YapeServices.Core.csproj" />
 	</ItemGroup>	
 	
 </Project>

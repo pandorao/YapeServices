@@ -20,9 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\YapeServices.Database\YapeServices.Database.csproj" />
-    <ProjectReference Include="..\YapeServices.Kafka\YapeServices.Kafka.csproj" />
-    <ProjectReference Include="..\YapeServices.Services\YapeServices.Services.csproj" />
+    <ProjectReference Include="..\YapeServices.Adapters.Kafka\YapeServices.Adapters.Kafka.csproj" />
+    <ProjectReference Include="..\YapeServices.Adapters.Persistence\YapeServices.Adapters.Persistence.csproj" />
+    <ProjectReference Include="..\YapeServices.Core\YapeServices.Core.csproj" />
   </ItemGroup>
 
 </Project>
