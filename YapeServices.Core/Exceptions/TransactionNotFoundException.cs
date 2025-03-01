@@ -8,7 +8,7 @@ namespace YapeServices.Core.Exceptions
 {
     public class TransactionNotFoundException : ApplicationException
     {
-        public TransactionNotFoundException(string id)
-            : base($"Transaction with ID {id} was not found.") { }
+        public TransactionNotFoundException()
+            : base("Transaction not found") { }
     }
 }

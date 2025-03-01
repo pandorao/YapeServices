@@ -29,7 +29,7 @@ namespace YapeServices.Services
             {
                 if (transaction == null)
                 {
-                    throw new TransactionNotFoundException(id);
+                    throw new TransactionNotFoundException();
                 }
 
                 if (transaction.TransactionStatus != Entities.Enumerations.EnumTransactionStatus.Pending)

@@ -9,6 +9,6 @@ namespace YapeServices.Core.Exceptions
     public class TransactionAlreadyExecutedException : ApplicationException
     {
         public TransactionAlreadyExecutedException()
-            : base("Transaction has already been executed.") { }
+            : base("Transaction was executed") { }
     }
 }

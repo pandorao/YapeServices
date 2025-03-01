@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YapeServices.Adapters.Persi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YapeServices.Adapters.WebApi", "YapeServices.Adapters.WebApi\YapeServices.Adapters.WebApi.csproj", "{7C491DA8-7D62-4044-A8D6-AAF80B40C5E5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DE45CBFE-2AB8-43F6-BA24-CE969D282189}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YapeServices.Core.Tests", "YapeServices.Core.Tests\YapeServices.Core.Tests.csproj", "{2D2A078A-6F2D-4C65-8750-1CE4936E4842}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,10 @@ Global
 		{7C491DA8-7D62-4044-A8D6-AAF80B40C5E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C491DA8-7D62-4044-A8D6-AAF80B40C5E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C491DA8-7D62-4044-A8D6-AAF80B40C5E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D2A078A-6F2D-4C65-8750-1CE4936E4842}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D2A078A-6F2D-4C65-8750-1CE4936E4842}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D2A078A-6F2D-4C65-8750-1CE4936E4842}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D2A078A-6F2D-4C65-8750-1CE4936E4842}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,5 +58,6 @@ Global
 		{729CD0BF-BE92-450F-B7E9-842F9D291876} = {AF1A917C-3E2A-4AF1-A61D-B46302A786F7}
 		{A0395853-9668-455F-8638-FD7087743657} = {AF1A917C-3E2A-4AF1-A61D-B46302A786F7}
 		{7C491DA8-7D62-4044-A8D6-AAF80B40C5E5} = {AF1A917C-3E2A-4AF1-A61D-B46302A786F7}
+		{2D2A078A-6F2D-4C65-8750-1CE4936E4842} = {DE45CBFE-2AB8-43F6-BA24-CE969D282189}
 	EndGlobalSection
 EndGlobal
