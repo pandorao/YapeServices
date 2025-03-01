@@ -1,11 +1,11 @@
 ﻿using Confluent.Kafka;
 using Microsoft.Extensions.Options;
 using System.Text.Json;
-using YapeServices.Ports.Kafka;
+using YapeServices.Ports.Messenger;
 
 namespace YapeServices.Kafka
 {
-    public class KafkaProducerService : IKafkaProducerService
+    public class KafkaProducerService : IMessengerProducerService
     {
         private readonly IProducer<string, string> _producer;
         private readonly string _topic;

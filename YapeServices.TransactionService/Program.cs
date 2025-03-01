@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Yape.Adapters.Services.Repositories.Persistance;
 using YapeServices.Database.Repositories;
 using YapeServices.Kafka;
-using YapeServices.Ports.Kafka;
+using YapeServices.Ports.Messenger;
 using YapeServices.Ports.Repositories;
 using YapeServices.Ports.Services;
 using YapeServices.Services;
@@ -16,7 +16,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SQLServer"))
 );
 
-builder.Services.AddScoped<IKafkaProducerService, KafkaProducerService>();
+builder.Services.AddScoped<IMessengerProducerService, KafkaProducerService>();
 builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 builder.Services.AddScoped<ITransactionsService, TransactionServices>();
 builder.Services.AddScoped<IAntifraudService, AntifraudService>();

@@ -3,7 +3,7 @@ using Yape.Entities.Base;
 using YapeServices.Entities.Dtos.Transactions;
 using YapeServices.Entities.Enumerations;
 using YapeServices.Entities.Models;
-using YapeServices.Ports.Kafka;
+using YapeServices.Ports.Messenger;
 using YapeServices.Ports.Repositories;
 using YapeServices.Ports.Services;
 
@@ -12,11 +12,11 @@ namespace YapeServices.Services
     public class TransactionServices : ITransactionsService
     {
         private ITransactionRepository _transactionRepository;
-        private IKafkaProducerService _kafkaProducerService;
+        private IMessengerProducerService _kafkaProducerService;
 
         public TransactionServices(
             ITransactionRepository transactionRepository,
-            IKafkaProducerService kafkaProducerService)
+            IMessengerProducerService kafkaProducerService)
         {
             _kafkaProducerService = kafkaProducerService;
             _transactionRepository = transactionRepository;

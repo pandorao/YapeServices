@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YapeServices.Ports.Kafka
+namespace YapeServices.Ports.Messenger
 {
-    public interface IKafkaProducerService
+    public interface IMessengerProducerService
     {
         Task SendMessageAsync(string key, string message);
     }
